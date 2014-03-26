@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    if isDev
+      script.
+        console.log('on development');
+        window.BS = {};
+    meta(charset="utf-8")
+    title= "Bucket Streams"
+    meta(name="description", content="Mobile app for Bucket Streams. See what you want, share what you want.")
+    meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width")
+    for href in stylesheets
+      link(rel="stylesheet", href="#{href}")
+    for script in scripts
+      script(src="#{script}")
+  body(ng-app="bsm.app")
+    ion-nav-view(animation="slide-left-right")

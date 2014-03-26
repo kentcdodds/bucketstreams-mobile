@@ -1,0 +1,89 @@
+
+/* line 2 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/imports.styl */
+
+/* line 1 : /Users/kentcdodds/Developer/bucketstreams-mobile/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 293 : /Users/kentcdodds/Developer/bucketstreams-mobile/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 293 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+
+/* line 1 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+strong{color:#f00}
+/* line 3 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+
+/* line 3 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-bs-blue-0{color:#03426a}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-bs-blue-0{background-color:#03426a}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-bs-blue-1{color:#24587a}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-bs-blue-1{background-color:#24587a}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-bs-blue-2{color:#0a67a3}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-bs-blue-2{background-color:#0a67a3}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-bs-blue-3{color:#3e97d1}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-bs-blue-3{background-color:#3e97d1}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-bs-blue-4{color:#65a6d1}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-bs-blue-4{background-color:#65a6d1}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-bs-brown-0{color:#6e3700}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-bs-brown-0{background-color:#6e3700}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-bs-brown-1{color:#bf8030}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-bs-brown-1{background-color:#bf8030}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-bs-brown-2{color:#ff8e00}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-bs-brown-2{background-color:#ff8e00}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-bs-brown-3{color:#ffaa40}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-bs-brown-3{background-color:#ffaa40}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-bs-brown-4{color:#ffc173}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-bs-brown-4{background-color:#ffc173}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-facebook{color:#3b5998}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-facebook{background-color:#3b5998}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-twitter{color:#4099ff}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-twitter{background-color:#4099ff}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-google{color:#d34836}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-google{background-color:#d34836}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-red{color:#f00}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-red{background-color:#f00}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-blue{color:#00f}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-blue{background-color:#00f}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-green{color:#008000}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-green{background-color:#008000}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-white{color:#fff}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-white{background-color:#fff}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-yellow{color:#ff0}
+/* line 34 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.background-color-yellow{background-color:#ff0}
+/* line 42 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+.color-white > a:hover,.color-white > a:active,.color-white > a:visited,a.color-white:hover,a.color-white:active,a.color-white:visited{color:#fff}

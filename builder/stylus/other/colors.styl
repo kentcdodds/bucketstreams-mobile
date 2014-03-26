@@ -1,0 +1,43 @@
+/*
+ * Bucket Streams colors
+ * .bs-blue-0
+ * .bs-brown-1
+ */
+bsBlue0 = #03426A
+bsBlue1 = #24587A
+bsBlue2 = #0A67A3
+bsBlue3 = #3E97D1
+bsBlue4 = #65A6D1
+
+bsBrown0 = #6e3700
+bsBrown1 = #BF8030
+bsBrown2 = #FF8E00
+bsBrown3 = #FFAA40
+bsBrown4 = #FFC173
+
+facebookColor = #3B5998
+twitterColor = #4099FF
+googlePlusColor = #D34836
+
+bsOffWhite = #FAFCF9
+bodyBackground = bsOffWite
+
+iterateColors(colors)
+  for color in colors
+    .color-{color[0]}
+      color color[1]
+    .background-color-{color[0]}
+      background-color color[1]
+
+iterateColors(('bs-blue-0' bsBlue0) ('bs-blue-1' bsBlue1) ('bs-blue-2' bsBlue2) ('bs-blue-3' bsBlue3) ('bs-blue-4' bsBlue4))
+iterateColors(('bs-brown-0' bsBrown0) ('bs-brown-1' bsBrown1) ('bs-brown-2' bsBrown2) ('bs-brown-3' bsBrown3) ('bs-brown-4' bsBrown4))
+iterateColors((facebook facebookColor) (twitter twitterColor) (google googlePlusColor))
+iterateColors(('red' red) ('blue' blue) ('green' green) ('white' white) ('yellow' yellow))
+
+.color-white > a:hover,
+.color-white > a:active,
+.color-white > a:visited,
+a.color-white:hover,
+a.color-white:active,
+a.color-white:visited
+  color white;
