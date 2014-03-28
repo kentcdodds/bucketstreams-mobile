@@ -1,5 +1,27 @@
 <div>
-  <h1>{{greeting}}</h1>
-  sup!
-  <h2>{{currentUser.getDisplayName()}}</h2>
+  <div ng-show="isAuthenticated">
+    <h2>{{currentUser.getDisplayName()}}</h2>
+  </div>
+  <div ng-hide="isAuthenticated">
+    <div class="login-form-container padding">
+      <h1>Bucket Streams</h1>
+      <h2>Login</h2>
+      <div class="login-form">
+        <form id="login-form" name="loginForm" role="form" ng-submit="login(loginUsername, loginPassword)" class="center-block">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input type="text" placeholder="Email or Username" ng-model="loginUsername">
+            </label>
+            <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="loginPassword">
+            </label>
+          </div>
+          <button type="submit" class="button button-block button-positive">Login</button>
+        </form>
+      </div>
+    </div>
+    <div class="auth-background">
+      <img src="img/stream-blur.jpg">
+    </div>
+  </div>
 </div>
