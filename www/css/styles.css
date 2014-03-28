@@ -20,10 +20,16 @@
 /* line 22 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
 .login-form-container h1,.login-form-container h2{color:#fff}
 /* line 24 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
-.login-form-container .login-form{margin-top:40px}
+.login-form-container .login-form{margin-top:40px;}
 /* line 26 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+.login-form-container .login-form .left-button{float:left}
+/* line 28 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+.login-form-container .login-form .right-button{float:right;padding-left:28px;padding-right:28px}
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+.trouble-button{position:absolute;bottom:0;left:0;margin-left:10px;margin-bottom:10px}
+/* line 38 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
 
-/* line 26 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
+/* line 38 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
 
 /* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
 .color-bs-blue-0{color:#03426a}
