@@ -3,7 +3,7 @@
   <head>
     <script>
       window.BS = {};
-      window.BS.BASE_URL = 'http://alpha.bucketstreams.com';
+      window.BS.BASE_URL = 'http://local.bucketstreams.com:3000';
       window.BS.onDev = true;
     </script>
     <script>console.log('on development');</script>
@@ -41,10 +41,11 @@
     <script src="bower_components/bs-js-common/bs.common.directives/bsValidInput.js"></script>
     <script src="js/components/app.js"></script>
     <script src="js/main/app.js"></script>
+    <script src="js/main/DevAuthInterceptor.js"></script>
     <script src="js/main/MainCtrl.js"></script>
     <script src="cordova.js"></script>
   </head>
-  <body ng-app="bsm.app">
+  <body ng-app="bs.mobile.app">
     <h1>Hello World!</h1>
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
   </body>

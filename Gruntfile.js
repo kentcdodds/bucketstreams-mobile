@@ -53,7 +53,7 @@ function getJadeData(isDev) {
     stylesheets: styles,
     scripts: scripts,
     isDev: isDev,
-    BASE_URL: 'http://alpha.bucketstreams.com'
+    BASE_URL: 'http://local.bucketstreams.com:3000'
   };
 }
 

@@ -1,7 +1,9 @@
 (function() {
-  var app = angular.module('bsm.app', ['ionic', 'bs.common']);
+  var app = angular.module('bs.mobile.app', ['ionic', 'bs.common']);
 
-  app.config(function($stateProvider, $urlRouterProvider) {
+
+  app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+    $httpProvider.interceptors.push('DevAuthInterceptor');
 
     var resolveCurrentUserInfo = {};
     _.each(['User', 'Buckets', 'Streams'], function(thing) {

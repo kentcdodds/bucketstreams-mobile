@@ -1,4 +1,4 @@
-angular.module('bsm.app').controller('MainCtrl', function($scope, currentUser, isAuthenticated, User, $state, $ionicPopup, CurrentUserInfoService) {
+angular.module('bs.mobile.app').controller('MainCtrl', function($scope, currentUser, isAuthenticated, User, $state, $ionicPopup, CurrentUserInfoService) {
   $scope.greeting = 'Hello World!';
   console.log(currentUser);
   $scope.currentUser = currentUser;
@@ -8,7 +8,7 @@ angular.module('bsm.app').controller('MainCtrl', function($scope, currentUser, i
     $scope.currentUser = user;
     $scope.isAuthenticated = !!user;
     alert('Getting Buckets');
-    $scope.buckets = CurrentUserInfoService.getBuckets();
+    $scope.buckets = CurrentUserInfoService.refreshBuckets();
     var promise = $scope.buckets.$promise;
     promise.then(function(data) {
       $ionicPopup.alert({
@@ -35,7 +35,6 @@ angular.module('bsm.app').controller('MainCtrl', function($scope, currentUser, i
     $scope.going = true;
     User[action](input, password).then(function(data) {
       CurrentUserInfoService.refreshUser();
-      CurrentUserInfoService.refreshAuthenticated();
     }, function(err) {
       $scope.going = false;
       $ionicPopup.alert({
