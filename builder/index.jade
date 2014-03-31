@@ -1,10 +1,13 @@
 doctype html
 html(lang="en")
   head
+    script.
+      window.BS = {};
+      window.BS.BASE_URL = '#{BASE_URL}';
+      window.BS.onDev = #{isDev};
     if isDev
       script.
         console.log('on development');
-        window.BS = {};
     meta(charset="utf-8")
     title= "Bucket Streams"
     meta(name="description", content="Mobile app for Bucket Streams. See what you want, share what you want.")
@@ -14,4 +17,5 @@ html(lang="en")
     for script in scripts
       script(src="#{script}")
   body(ng-app="bsm.app")
+    h1 Hello World!
     ion-nav-view(animation="slide-left-right")

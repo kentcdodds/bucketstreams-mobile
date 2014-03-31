@@ -1,4 +1,4 @@
-angular.module('bs.models').factory('Cacher', function($cacheFactory, _) {
+angular.module('bs.common.models').factory('Cacher', function($cacheFactory, _) {
   var cacher = {
     userCache: null,
     streamCache: null,

@@ -1,6 +1,16 @@
 (function() {
-  var app = angular.module('bs.models', ['ngResource', 'bs.services']);
-  app.constant('BASE_URL', 'http://local.bucketstreams.com:3000');
+  var app = angular.module('bs.common.models', ['ngResource']);
+
+  var baseUrl = '/';
+  if (window.BS && window.BS.BASE_URL) {
+    baseUrl = window.BS.BASE_URL;
+  }
+
+  app.constant('BaseUrl', baseUrl);
+
+  app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor');
+  });
 
   app.run(function($rootScope, $window, Cacher, Bucket, Comment, Post, Share, Stream, User, CurrentUserInfoService) {
     var cacheables = [
@@ -13,8 +23,8 @@
     ];
     Cacher.initialize(cacheables);
 
-    // If we're on dev, then add a few thing to the global BS object.
-    if (window.BS) {
+    // If we're on dev, then add a few things to the global BS object for debugging.
+    if ($window.BS && $window.BS.onDev) {
       $window.BS.Cacher = Cacher;
       $window.BS.model = {
         Bucket: Bucket,

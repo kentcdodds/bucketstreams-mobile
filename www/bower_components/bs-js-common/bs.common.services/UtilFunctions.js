@@ -1,4 +1,4 @@
-angular.module('bs.services').factory('UtilFunctions', function(_) {
+angular.module('bs.common.services').factory('UtilFunctions', function(_) {
   function testPath(object, path) {
     var props = path.split('.');
     var value = object;

@@ -1,4 +1,4 @@
-angular.module('bs.directives').directive('bsValidInput', function(UtilService, _) {
+angular.module('bs.common.directives').directive('bsValidInput', function(UtilService, _) {
   var setAllToValid = function(ctrl) {
     _.each(ctrl.$error, function(e, key) {
       ctrl.$setValidity(key, true);

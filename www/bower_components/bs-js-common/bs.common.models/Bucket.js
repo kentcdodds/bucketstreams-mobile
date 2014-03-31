@@ -1,5 +1,5 @@
-angular.module('bs.models').factory('Bucket', function($resource, BASE_URL, Cacher) {
-  var Bucket = $resource(BASE_URL + '/api/v1/rest/buckets/:id', { id: '@_id' });
+angular.module('bs.common.models').factory('Bucket', function($resource, Cacher, BaseUrl) {
+  var Bucket = $resource(BaseUrl + '/api/v1/rest/buckets/:id', { id: '@_id' });
   Bucket.prototype.selected = function(newState) {
     if (!_.isUndefined(newState)) {
       this.isSelected = newState;

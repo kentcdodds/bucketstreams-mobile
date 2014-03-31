@@ -13,10 +13,24 @@ function getJadeData(isDev) {
     return files;
   }
 
-  function getAppSection(name) {
-    var appJs = getFilesInPath('www/js/' + name + '/app.js', 'www/');
-    var otherJsFiles = getFilesInPath('www/js/' + name + '/**/*.js', 'www/');
+  function getSection(root, name) {
+    var appJs = getFilesInPath(root + name + '/app.js', root);
+    var otherJsFiles = getFilesInPath(root + name + '/**/*.js', root);
     return _.union(appJs, otherJsFiles);
+  }
+
+  function getBSJSCommon() {
+    var root = 'www/';
+    var path = 'bower_components/bs-js-common/bs.common.';
+    var models = getSection(root, path + 'models');
+    var services = getSection(root, path + 'services');
+    var filters = getSection(root, path + 'filters');
+    var directives = getSection(root, path + 'directives');
+    return _.union(['bower_components/bs-js-common/app.js'], models, services, filters, directives);
+  }
+
+  function getAppSection(name) {
+    return getSection('www/', 'js/' + name);
   }
 
   var styles = _.union([
@@ -30,7 +44,7 @@ function getJadeData(isDev) {
     'bower_components/ionic/release/js/ionic.bundle.js',
     'bower_components/angular-resource/angular-resource.js',
     'bower_components/angular-sanitize/angular-sanitize.js'
-  ], getAppSection('constants'), getAppSection('models'), getAppSection('components'), getAppSection('main'));
+  ], getBSJSCommon(), getAppSection('components'), getAppSection('main'));
 
   // Must be added last!
   scripts.push('cordova.js');
@@ -38,7 +52,8 @@ function getJadeData(isDev) {
   return {
     stylesheets: styles,
     scripts: scripts,
-    isDev: isDev
+    isDev: isDev,
+    BASE_URL: 'http://alpha.bucketstreams.com'
   };
 }
 

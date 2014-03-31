@@ -1,19 +1,20 @@
-angular.module('bs.services').factory('UtilService', function(_, Cacher, $http, $q, Post, Share, Comment, User, Stream, Bucket, BASE_URL) {
+angular.module('bs.common.services').factory('UtilService', function(_, Cacher, $http, $q, BaseUrl, Post, Share, Comment, User, Stream, Bucket) {
+  var utilPrefix = BaseUrl + '/api/v1/util/';
+  var authPrefix = BaseUrl + '/api/v1/auth/';
   //noinspection UnnecessaryLocalVariableJS
   var util = {
     validateModel: function(model, params) {
       return $http({
-        url: BASE_URL + '/api/v1/util/validate/' + model,
+        url: utilPrefix + 'validate/' + model,
         method: 'GET',
         params: params
       });
     },
     loadData: function (type, username, typeName) {
-      var model = (type === 'stream' ? Stream : Bucket);
       var deferred = $q.defer();
       $http({
         method: 'GET',
-        url: BASE_URL + '/api/v1/util/data/' + type,
+        url: utilPrefix + 'data/' + type,
         params: {
           username: username,
           name: typeName
@@ -41,12 +42,12 @@ angular.module('bs.services').factory('UtilService', function(_, Cacher, $http, 
       return deferred.promise;
     },
     loadPost: function (postId) {
-      return $http.get(BASE_URL + '/api/v1/util/data/post/' + postId);
+      return $http.get(utilPrefix + 'data/post/' + postId);
     },
     sendResetPasswordEmail: function(username) {
       return $http({
         method: 'POST',
-        url: BASE_URL + '/api/v1/auth/reset-password',
+        url: authPrefix + 'reset-password',
         data: {
           username: username
         }

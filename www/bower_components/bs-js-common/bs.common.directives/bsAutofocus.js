@@ -1,4 +1,4 @@
-angular.module('bs.directives').directive('bsAutofocus', function($timeout, $document) {
+angular.module('bs.common.directives').directive('bsAutofocus', function($timeout, $document) {
   return {
     scope: {
       bsAutofocus: '=',

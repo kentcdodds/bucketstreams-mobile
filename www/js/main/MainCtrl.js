@@ -7,6 +7,20 @@ angular.module('bsm.app').controller('MainCtrl', function($scope, currentUser, i
   $scope.$on(CurrentUserInfoService.events.user, function(event, user) {
     $scope.currentUser = user;
     $scope.isAuthenticated = !!user;
+    alert('Getting Buckets');
+    $scope.buckets = CurrentUserInfoService.getBuckets();
+    var promise = $scope.buckets.$promise;
+    promise.then(function(data) {
+      $ionicPopup.alert({
+        content: JSON.stringify(data),
+        title: 'buckets'
+      });
+    }).catch(function(data) {
+      $ionicPopup.alert({
+        content: JSON.stringify(data),
+        title: 'error'
+      });
+    });
   });
 
   $scope.login = function(input, password) {
@@ -19,10 +33,10 @@ angular.module('bsm.app').controller('MainCtrl', function($scope, currentUser, i
 
   function loginOrRegister(action, input, password) {
     $scope.going = true;
-    User[action](input, password).success(function(data) {
+    User[action](input, password).then(function(data) {
       CurrentUserInfoService.refreshUser();
       CurrentUserInfoService.refreshAuthenticated();
-    }).error(function(err) {
+    }, function(err) {
       $scope.going = false;
       $ionicPopup.alert({
         content: err.message,

@@ -1,5 +1,5 @@
 (function() {
-  angular.module('bs.directives', ['bs.constants']);
-  angular.module('bs.filters', ['bs.constants']);
-  angular.module('bs.services', ['bs.constants']);
+  angular.module('bs.mobile.directives', ['bs.common.constants']);
+  angular.module('bs.mobile.filters', ['bs.common.constants']);
+  angular.module('bs.mobile.services', ['bs.common.constants']);
 })();

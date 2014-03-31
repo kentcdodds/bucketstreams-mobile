@@ -1,39 +1,44 @@
-angular.module('bs.models').factory('User', function($resource, $http, $q, _, UtilFunctions, $window, BASE_URL) {
-  var User = $resource(BASE_URL + '/api/v1/rest/users/:id', { id: '@_id' }, {
+angular.module('bs.common.models').factory('User', function($resource, $http, $q, BaseUrl, _, UtilFunctions, $window) {
+  var User = $resource(BaseUrl + '/api/v1/rest/users/:id', { id: '@_id' }, {
     dicsoverUsers: {
       method: 'GET',
-      url: '/api/v1/rest/users/discover',
+      url: BaseUrl + '/api/v1/rest/users/discover',
       isArray: true,
       params: {
         username: 'me'
       }
     }
   });
-  var authPrefix = BASE_URL + '/api/v1/auth';
+  var authPrefix = BaseUrl + '/api/v1/auth/';
+
   User.register = function(email, password) {
-    return $http({
-      method: 'POST',
-      url: authPrefix + '/register',
-      data: {
-        email: email,
-        password: password
-      }
-    });
+    return loginOrRegister('register', email, password);
   };
 
-  User.login = function(username, password) {
+  User.login = function(email, password) {
+    return loginOrRegister('login', email, password);
+  };
+
+  function loginOrRegister(type, username, password) {
     return $http({
       method: 'POST',
-      url: authPrefix + '/login',
+      url: authPrefix + type,
       data: {
-        username: username,
+        email: username,
         password: password
       }
+    }).then(function(response) {
+      var token = response.data.token;
+      $window.localStorage.setItem('user-token', token);
+    }, function(err) {
+      $window.localStorage.removeItem('user-token');
+      throw Error(err.message);
     });
-  };
+  }
 
   User.logout = function() {
-    $window.location.href = authPrefix + '/logout';
+    $window.localStorage.removeItem('user-token');
+    $window.location.href = '/';
   };
 
   User.prototype.logout = function() {
@@ -110,7 +115,7 @@ angular.module('bs.models').factory('User', function($resource, $http, $q, _, Ut
   };
 
   User.prototype.disconnectFrom = function(provider) {
-    return $http.get(BASE_URL + '/api/v1/auth/disconnect/' + provider);
+    return $http.get(authPrefix + 'disconnect/' + provider);
   };
 
   function getRuleIndex(user, provider, type, rule) {

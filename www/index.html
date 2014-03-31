@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <script>
-      console.log('on development');
       window.BS = {};
+      window.BS.BASE_URL = 'http://alpha.bucketstreams.com';
+      window.BS.onDev = true;
     </script>
+    <script>console.log('on development');</script>
     <meta charset="utf-8">
     <title>Bucket Streams</title>
     <meta name="description" content="Mobile app for Bucket Streams. See what you want, share what you want.">
@@ -17,32 +19,33 @@
     <script src="bower_components/ionic/release/js/ionic.bundle.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="js/constants/app.js"></script>
-    <script src="js/models/app.js"></script>
-    <script src="js/models/Bucket.js"></script>
-    <script src="js/models/Cacher.js"></script>
-    <script src="js/models/Comment.js"></script>
-    <script src="js/models/CurrentUserInfoService.js"></script>
-    <script src="js/models/Post.js"></script>
-    <script src="js/models/Share.js"></script>
-    <script src="js/models/Stream.js"></script>
-    <script src="js/models/User.js"></script>
+    <script src="bower_components/bs-js-common/app.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.models/app.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.models/AuthInterceptor.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.models/Bucket.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.models/Cacher.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.models/Comment.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.models/CurrentUserInfoService.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.models/Post.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.models/Share.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.models/Stream.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.models/User.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.services/app.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.services/UtilFunctions.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.services/UtilService.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.filters/app.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.filters/bs-capitalize-words.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.filters/bs-filter-main.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.directives/app.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.directives/bsAutofocus.js"></script>
+    <script src="bower_components/bs-js-common/bs.common.directives/bsValidInput.js"></script>
     <script src="js/components/app.js"></script>
-    <script src="js/components/bs-common/directives/bsAutofocus.js"></script>
-    <script src="js/components/bs-common/directives/bsProfilePicture.js"></script>
-    <script src="js/components/bs-common/directives/bsSpinner.js"></script>
-    <script src="js/components/bs-common/directives/bsValidInput.js"></script>
-    <script src="js/components/bs-common/directives/bsVisible.js"></script>
-    <script src="js/components/bs-common/filters/bs-capitalize-words.js"></script>
-    <script src="js/components/bs-common/filters/bs-filter-main.js"></script>
-    <script src="js/components/bs-common/services/UtilFunctions.js"></script>
-    <script src="js/components/bs-common/services/UtilService.js"></script>
     <script src="js/main/app.js"></script>
     <script src="js/main/MainCtrl.js"></script>
-    <script src="js/main/services/AlertService.js"></script>
     <script src="cordova.js"></script>
   </head>
   <body ng-app="bsm.app">
+    <h1>Hello World!</h1>
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
   </body>
 </html>

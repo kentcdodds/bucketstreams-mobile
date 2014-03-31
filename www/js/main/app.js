@@ -1,6 +1,7 @@
-angular.module('bsm.app', ['ionic', 'bs.models', 'bs.constants'])
+(function() {
+  var app = angular.module('bsm.app', ['ionic', 'bs.common']);
 
-  .config(function($stateProvider, $urlRouterProvider) {
+  app.config(function($stateProvider, $urlRouterProvider) {
 
     var resolveCurrentUserInfo = {};
     _.each(['User', 'Buckets', 'Streams'], function(thing) {
@@ -36,8 +37,8 @@ angular.module('bsm.app', ['ionic', 'bs.models', 'bs.constants'])
         templateUrl: 'js/main/root.html',
         controller: 'MainCtrl',
         resolve: {
-          isAuthenticated: function(CurrentUserInfoService) {
-            return CurrentUserInfoService.refreshAuthenticated();
+          isAuthenticated: function() {
+            return !!localStorage.getItem('user-token');
           },
           currentUser: resolveCurrentUserInfo.resolveUser,
           userBuckets: resolveCurrentUserInfo.resolveBuckets,
@@ -48,3 +49,4 @@ angular.module('bsm.app', ['ionic', 'bs.models', 'bs.constants'])
     // if none of the above are matched, go to this one
     $urlRouterProvider.otherwise('/');
   });
+})();
