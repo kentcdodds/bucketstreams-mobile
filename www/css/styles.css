@@ -1,5 +1,5 @@
 
-/* line 2 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/imports.styl */
+/* line 3 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/imports.styl */
 
 /* line 1 : /Users/kentcdodds/Developer/bucketstreams-mobile/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
 
@@ -7,27 +7,31 @@
 
 /* line 293 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
 
-/* line 1 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+/* line 293 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
 
-/* line 2 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
-.auth-background img{min-width:100%;max-height:100%;position:fixed;top:0;left:-130px}@media screen and (min-width: 600px){
-/* line 10 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+/* line 293 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
 
-/* line 11 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+/* line 1 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
+
+/* line 2 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
+.auth-background img{min-width:100%;max-height:100%;position:fixed;top:0;left:-130px}@media screen and (max-height: 350px){
+/* line 10 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
+
+/* line 11 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
 .auth-background img{left:0}}
-/* line 14 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+/* line 14 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
 .login-form-container{z-index:1;position:absolute;color:#fff;width:100%;top:10%;text-align:center;text-shadow:0 0 10px #000,0 0 10px #000;}
-/* line 22 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+/* line 22 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
 .login-form-container h1,.login-form-container h2{color:#fff}
-/* line 24 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+/* line 24 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
 .login-form-container .login-form{margin-top:40px;}
-/* line 26 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+/* line 26 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
 .login-form-container .login-form .left-button{float:left}
-/* line 28 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+/* line 28 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
 .login-form-container .login-form .right-button{float:right;padding-left:28px;padding-right:28px}
-/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+/* line 32 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
 .trouble-button{position:absolute;bottom:0;left:0;margin-left:10px;margin-bottom:10px}
-/* line 38 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/root.styl */
+/* line 38 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/bs-login-form.styl */
 
 /* line 38 : /Users/kentcdodds/Developer/bucketstreams-mobile/builder/stylus/other/colors.styl */
 

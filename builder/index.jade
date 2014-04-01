@@ -1,19 +1,22 @@
 doctype html
 html(lang="en")
   head
-    script.
-      window.BS = {};
-      window.BS.BASE_URL = '#{BASE_URL}';
-      window.BS.onDev = #{isDev};
-    if isDev
-      script.
-        console.log('on development');
     meta(charset="utf-8")
     title= "Bucket Streams"
     meta(name="description", content="Mobile app for Bucket Streams. See what you want, share what you want.")
     meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width")
     for href in stylesheets
       link(rel="stylesheet", href="#{href}")
+
+    script.
+      window.BS = {};
+      window.BS.BASE_URL = '#{BASE_URL}';
+      window.BS.onDev = #{onDev};
+      window.BS.basicAuth = '#{basicAuth}';
+    if onDev
+      script.
+        console.log('on development');
+
     for script in scripts
       script(src="#{script}")
   body(ng-app="bs.mobile.app")

@@ -3,8 +3,9 @@ var path = require('path');
 var fs = require('fs');
 var _ = require('lodash-node');
 var glob = require('glob');
+var address = require('address');
 
-function getJadeData(isDev) {
+function getJadeData(env) {
   function getFilesInPath(pattern, removePrefix) {
     var files = glob.sync(pattern);
     _.each(files, function (file, num) {
@@ -49,22 +50,46 @@ function getJadeData(isDev) {
   // Must be added last!
   scripts.push('cordova.js');
 
-  return {
+  var data = {
+    onDev: false,
+    BASE_URL: 'http://www.bucketstreams.com',
+    basicAuth: '',
     stylesheets: styles,
-    scripts: scripts,
-    isDev: isDev,
-    BASE_URL: 'http://local.bucketstreams.com:3000'
+    scripts: scripts
   };
+  if (/local/.test(env)) {
+    data.onDev = true;
+    data.BASE_URL = 'http://local.bucketstreams.com:3000';
+//    data.BASE_URL = 'http://' + address.ip() + ':3000';
+    data.basicAuth = 'Basic Z3Vlc3Q6YnVja2V0c3RyZWFtc3JvY2tzIQ==';
+  } else if (/alpha/.test(env)) {
+    data.onDev = true;
+    data.BASE_URL = 'http://alpha.bucketstreams.com';
+    data.basicAuth = 'Basic Z3Vlc3Q6SVMgaXMgdGhlIHRydXRo';
+  }
+
+  return data;
 }
 
 module.exports = function (grunt) {
 
   grunt.initConfig({
     jade: {
-      compile: {
+      local: {
         options: {
           data: function() {
-            return getJadeData(true);
+            return getJadeData('local');
+          },
+          pretty: true
+        },
+        files: {
+          'www/index.html': ['builder/index.jade']
+        }
+      },
+      alpha: {
+        options: {
+          data: function() {
+            return getJadeData('alpha');
           },
           pretty: true
         },
@@ -87,7 +112,7 @@ module.exports = function (grunt) {
     },
     watch: {
       builder: {
-        files: 'builder/**',
+        files: ['builder/**', 'Gruntfile.js'],
         tasks: 'builder'
       }
     },
@@ -98,6 +123,14 @@ module.exports = function (grunt) {
         host: 'mobile.local.bucketstreams.com',
         cache: -1
       }
+    },
+    shell: {
+      runAndroid: {
+        options: {
+          stdout: true
+        },
+        command: 'cordova run android'
+      }
     }
   });
 
@@ -105,14 +138,22 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-http-server');
+  grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('builder', [
     'stylus:compile',
-    'jade:compile'
+    'jade:local',
+    'watch'
   ]);
 
   grunt.registerTask('default', [
     'builder'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'stylus:compile',
+    'jade:alpha',
+    'shell:runAndroid'
   ]);
 
   grunt.registerTask('server', 'Running http-server and watcher', function() {

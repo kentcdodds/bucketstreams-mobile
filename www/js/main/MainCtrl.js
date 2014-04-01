@@ -7,21 +7,14 @@ angular.module('bs.mobile.app').controller('MainCtrl', function($scope, currentU
   $scope.$on(CurrentUserInfoService.events.user, function(event, user) {
     $scope.currentUser = user;
     $scope.isAuthenticated = !!user;
-    alert('Getting Buckets');
     $scope.buckets = CurrentUserInfoService.refreshBuckets();
-    var promise = $scope.buckets.$promise;
-    promise.then(function(data) {
-      $ionicPopup.alert({
-        content: JSON.stringify(data),
-        title: 'buckets'
-      });
-    }).catch(function(data) {
-      $ionicPopup.alert({
-        content: JSON.stringify(data),
-        title: 'error'
-      });
-    });
   });
+
+  $scope.logout = function() {
+    $scope.isAuthenticated = false;
+    $scope.currentUser.logout();
+    CurrentUserInfoService.setUser(null);
+  };
 
   $scope.login = function(input, password) {
     loginOrRegister('login', input, password);

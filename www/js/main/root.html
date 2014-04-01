@@ -1,31 +1,9 @@
 <div>
   <div ng-show="isAuthenticated">
     <h2>{{currentUser.getDisplayName()}}</h2>
+    <button class="button button-stable" ng-click="logout()">Logout</button>
   </div>
   <div ng-hide="isAuthenticated">
-    <div class="login-form-container padding">
-      <h1>Bucket Streams</h1>
-      <h2>Login</h2>
-      <div class="login-form">
-        <form id="login-form" name="loginForm" role="form" ng-submit="login(loginUsername, loginPassword)" class="center-block">
-          <div class="list list-inset">
-            <label class="item item-input">
-              <input type="text" placeholder="Email or Username" ng-model="loginUsername">
-            </label>
-            <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="loginPassword">
-            </label>
-          </div>
-          <div>
-            <button type="submit" class="right-button button button-positive">Login</button>
-            <button class="button button-small button-stable left-button" ng-click="action='sign-up'">Sign Up</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="auth-background">
-      <img src="img/stream-blur.jpg">
-    </div>
-    <button class="button button-small button-light button-clear trouble-button">Trouble?</button>
+    <bs-login-form></bs-login-form>
   </div>
 </div>

@@ -10,7 +10,7 @@
     "lodash": "~2.4.1",
     "jquery": "~2.1.0",
     "momentjs": "~2.5.1",
-    "ionic": "~0.9.27",
+    "ionic": "latest",
     "bs-js-common": "git@bitbucket.org:kentcdodds/bs-js-common.git"
   },
   "devDependencies": {

@@ -1,9 +1,9 @@
-angular.module('bs.mobile.app').factory('DevAuthInterceptor', function ($rootScope, $q) {
+angular.module('bs.mobile.app').factory('DevAuthInterceptor', function ($rootScope, $q, $window) {
   return {
     request: function (config) {
       config.headers = config.headers || {};
       if (!config.headers.Authorization) {
-        config.headers.Authorization = 'Basic Z3Vlc3Q6YnVja2V0c3RyZWFtc3JvY2tzIQ==';
+        config.headers.Authorization = $window.BS.basicAuth;
       }
       return config;
     },
